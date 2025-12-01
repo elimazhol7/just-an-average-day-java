@@ -1,4 +1,4 @@
-# Just an Average Day - Java Template
+# Just an Average Day 
 
 ## Instructions
 
