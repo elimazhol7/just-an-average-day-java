@@ -4,11 +4,54 @@
 package org.example;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
+    public static void main(String[] args) {
+
+        Statistics stats = new Statistics();
+        int[] numbers = {5, 2, 8, 1, 3};
+        // Basic For-Loop Calculations
+        System.out.println("Using For Loops:");
+        System.out.println("Maximum: " + stats.maximumUsingForLoop(numbers));
+        System.out.println("Minimum: " + stats.minimumUsingForLoop(numbers));
+        System.out.println("Sum: " + stats.sumUsingForLoop(numbers));
+        System.out.println("Average: " + stats.averageUsingForLoop(numbers));
+
+        // Stream-Based Calculations
+        System.out.println("\nUsing Streams:");
+        System.out.println("Maximum: " + stats.maximumUsingStream(numbers));
+        System.out.println("Minimum: " + stats.minimumUsingStream(numbers));
+        System.out.println("Sum: " + stats.sumUsingStream(numbers));
+        System.out.println("Average: " + stats.averageUsingStream(numbers));
+
+        // Add-On #1: Evens Only
+
+        System.out.println("\nAdd-On: Evens Only ");
+        int[] evens = stats.filterEvenNumbers(numbers);
+        printArray("Even numbers: ", evens);
+
+        // Add-On #2: Odds Only
+        System.out.println("\nAdd-On: Odds Only");
+        int[] odds = stats.filterOddNumbers(numbers);
+        printArray("Odd numbers: ", odds);
+
+        // Add-On #3: Add Five
+        System.out.println("\nAdd-On: Add Five ");
+        int[] plusFive = stats.addFive(numbers);
+        printArray("Numbers + 5: ", plusFive);
+
+        // Add-On #4: Square Numbers
+        System.out.println("\nAdd-On: Square Numbers");
+        int[] squared = stats.squareNumbers(numbers);
+        printArray("Squared numbers: ", squared);
+
+        System.out.println("\nThe End. Bye!");
     }
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+    // A helper method to print arrays 
+    private static void printArray(String message, int[] array) {
+        System.out.print(message);
+        for (int n : array) {
+            System.out.print(n + " ");
+        }
+        System.out.println();
     }
 }
